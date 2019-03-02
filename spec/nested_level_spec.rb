@@ -70,7 +70,6 @@ RSpec.describe NestedLevel do
   it "returns 2 for 2-level deep hash" do
     input = { a: { b: :c } }
 
-
     result = NestedLevel.call(input)
 
     expect(result).to eq(2)
