@@ -2,6 +2,19 @@
 
 Find how deep is your Array or Hash.
 
+## Usage
+
+```ruby
+max_nesting = NestedLevel.call(deeply_nested_hash)
+JSON.pretty_generate(deeply_nested_hash, max_nesting: max_nesting)
+
+NestedLevel.call([]) # => 1
+NestedLevel.call([ [] ]) # => 2
+
+NestedLevel.call({}) # => 1
+NestedLevel.call({ a: { b: :c } }) # => 2
+```
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -17,16 +30,6 @@ And then execute:
 Or install it yourself as:
 
     $ gem install nested_level
-
-## Usage
-
-```ruby
-NestedLevel.call([]) # => 1
-NestedLevel.call([ [] ]) # => 2
-
-NestedLevel.call({}) # => 1
-NestedLevel.call({ a: { b: :c } }) # => 2
-```
 
 ## Development
 
